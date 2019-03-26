@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dzf.mapper.PeopleMapper">
-    <select id="select" resultType="com.dzf.pojo.People">
+
+    <resultMap id="PeopleMap" type="com.dzf.pojo.People">
+        <result property="name" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="select" resultMap="PeopleMap">
         select *from t_user
         where username = #{name}
         and password = #{password}

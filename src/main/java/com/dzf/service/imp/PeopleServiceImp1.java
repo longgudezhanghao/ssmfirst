@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 @Service("peopleService")
 public class PeopleServiceImp1 implements PeopleService {
-
+    
     @Autowired
     private PeopleMapper peopleMapper;
 
     @Override
     public People get(People people) {
-
+        
         return peopleMapper.select(people);
     }
 

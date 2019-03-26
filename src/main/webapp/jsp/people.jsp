@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-${SESSION_PEOPLE.password}
+${SESSION_PEOPLE.name}
 </body>
 </html>
