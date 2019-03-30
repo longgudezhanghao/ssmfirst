@@ -17,24 +17,6 @@
         id必须要为multipartResolver，已经写死了
     -->
 
-    <!--拦截器的配置-->
-    <mvc:interceptors>
-
-        <mvc:interceptor>
-            <mvc:mapping path="/**/*"/>
-            <bean class="com.dzf.interceptors.MethodTimerInterceptor">
-            </bean>
-        </mvc:interceptor>
-
-        <mvc:interceptor>
-            <mvc:mapping path="/people/**/*"/>
-            <mvc:exclude-mapping path="/people/login"/>
-            <bean class="com.dzf.interceptors.SessionInterceptor">
-            </bean>
-        </mvc:interceptor>
-
-    </mvc:interceptors>
-
     <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
         <property name="maxUploadSize" value="20000000000000000"/>
