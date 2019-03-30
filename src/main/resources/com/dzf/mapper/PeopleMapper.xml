@@ -12,4 +12,9 @@
         where username = #{name}
         and password = #{password}
     </select>
+
+    <!--写完sql语句之后可到mysql可视化软件上运行一下，看是否出错，delete后无需加*也会删除多条记录，如果有多条记录-->
+    <delete id="delete">
+        delete from t_user where username = #{name}
+    </delete>
 </mapper>

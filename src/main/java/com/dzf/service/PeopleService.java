@@ -12,4 +12,6 @@ public interface PeopleService {
      */
 
     People get(People people);
+
+    boolean delete(String name);
 }

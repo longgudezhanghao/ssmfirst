@@ -6,4 +6,5 @@ public interface PeopleMapper {
 
     People select(People people);
 
+    int delete(String name);
 }

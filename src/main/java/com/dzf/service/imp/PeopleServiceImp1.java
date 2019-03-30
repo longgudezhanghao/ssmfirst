@@ -19,5 +19,15 @@ public class PeopleServiceImp1 implements PeopleService {
         return peopleMapper.select(people);
     }
 
+    @Override
+    public boolean delete(String name) {
+
+        int row  = peopleMapper.delete(name);
+
+        System.out.println(row);
+
+        return row == 1?true:false;
+    }
+
 
 }

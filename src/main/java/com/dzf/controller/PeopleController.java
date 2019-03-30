@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/people")
@@ -31,5 +33,15 @@ public class PeopleController {
         }else {
             return "redirect:/login.jsp";
         }
+    }
+
+    @RequestMapping("/delete/{name}")
+    @ResponseBody
+    public Map<String,Integer> delete(@PathVariable("name")String name){
+        boolean deleteSuc = peopleService.delete(name);
+        Map<String,Integer> map = new HashMap<>();
+        int code = deleteSuc?2000:2003;
+        map.put("code",code);
+        return map;
     }
 }
