@@ -10,11 +10,12 @@
         <param-value>classpath:spring/applicationcontext.xml</param-value>
     </context-param>
 
-    <!--添加编码过滤器之后依然没有解中文编码问题，待研究-->
+    <!--添加编码过滤器之后依然没有解中文编码问题，服务器tomacat中配置错误-->
     <!--解决中文乱码问题-->
 
 
     <filter>
+
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>

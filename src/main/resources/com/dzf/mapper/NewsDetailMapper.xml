@@ -3,7 +3,17 @@
 <mapper namespace="com.dzf.mapper.NewsDetailMapper">
 
     <select id="quaryAll" resultType="com.dzf.pojo.NewsDetail">
-        select *from news_detail ORDER by createdate dec
+        select *from news_detail ORDER by createdate desc
+    </select>
+
+    <select id="queryByTitle" resultType="com.dzf.pojo.NewsDetail">
+        select *from news_detail
+        <where>
+            <if test="title != null and title != ''">
+                title like concat('%',#{title},'%')
+            </if>
+        </where>
+        ORDER by createdate desc
     </select>
 
 </mapper>

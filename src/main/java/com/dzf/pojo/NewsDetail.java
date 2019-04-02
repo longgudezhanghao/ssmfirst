@@ -12,6 +12,27 @@ public class NewsDetail {
 
     private String author;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSummary() {
+
+        return summary;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public Date getCreatedate() {
+        return createdate;
+    }
+
     private Date createdate;
 
     public void setId(Integer id) {
